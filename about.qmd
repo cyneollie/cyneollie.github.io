@@ -1,0 +1,9 @@
+---
+title: "About"
+---
+
+Hello, my name is Cynthia Budiyanto and I am an aspiring biomedical scientist with lipids and proteins as my area of research! :)
+
+```{r}
+1 + 1
+```
