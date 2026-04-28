@@ -1,0 +1,107 @@
+---
+title: "MP1_DataWrangling"
+author: "Cynthia Budiyanto"
+format: html
+editor_options: 
+  chunk_output_type: console
+---
+
+### Loading data set...
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(stringr)
+library(lubridate)
+library(tidytext)
+library(textdata)
+
+lipid_old <- read_csv("~/SDS264_S26/Project/MP1/abstracts.csv") # with Miscellaneous column
+lipid <- read_csv("~/SDS264_S26/Project/MP1/abstracts_lipid.csv") # without Miscellaneous column
+```
+
+### Data wrangling
+
+*Note: Purpose of the code chunks is given prior to the code lines.*
+
+It came to my observation that there are 112 articles in which the "authors" column are shifted to the right, because the articles are written in other languages, and now the "authors" column contains information regarding what language the article was originally written in. The next column, which is the "authors information" column, contain the actual list of authors. The "abstract" column, then contains author information/origin, and so on. So we are going to fix that. There is also a row that does not have author information at all. We are going to remove that as well.
+
+```{r}
+multilanguage_fixed <- lipid_old |>
+  # First of all, we are removing rows without any information regarding the authors.
+  filter(Authors != "[No authors listed]") |>
+  # Second, we are interested specifically to fix the problem I diagnosed above for articles written in languages beside English. Their authors column has an identical pattern that we can filter. 
+  filter(str_detect(Authors, "^\\[")) |>
+  # We do not want this column anymore because it is irrelevant.
+  select(!Authors) |>
+  # Shifting the columns to the left and renaming them properly. So we have correct information in the correct column.
+  mutate(authors = Author_Information,
+         author_information = Abstract,
+         abstract = DOI,
+         DOI = Misc) |>
+  rename_with(tolower, .cols = c(Journal, Title, DOI)) |>
+  select(journal, title, authors, author_information, abstract, doi) |>
+  # In the code chunk below, I am removing some noticeable miscellaneous problems and troublesome rows that will make later data processing easier.
+  mutate(title = str_remove_all(title, "\\[|\\]")) |>
+  filter(!is.na(doi)) |>
+  filter(str_detect(author_information, "^A"))
+```
+
+Now that we have fixed that portion of the data frame, I will rejoin them with the rest of the data, and also fix miscellaneous formatting style from that lipid data frame.
+
+```{r}
+lipid_new <- lipid |>
+  # Renaming them to match the name convention I made above.
+  rename_with(tolower, .cols = where(is.character)) |>
+  # Removing the articles not written in English
+  filter(!str_detect(authors, "^\\[")) |>
+  # Removing retracted article without proper title and full information
+  filter(!str_detect(journal, "RETRACTED ARTICLE")) |>
+  # Selecting only rows with proper author information
+  filter(str_detect(author_information, "^A")) |>
+  # Removing rows without proper abstract information
+  filter(!str_detect(abstract, "^Erratum")) |>
+  filter(!str_detect(abstract, regex("doi", ignore_case = TRUE))) |>
+  # Joining the dataset with the fixed dataset for articles not written in English.
+  # Would be much less work if I just filter them out without doing all of the fixes, but the article collections would not be as diverse, because then it would only include articles from mainly Western countries. 
+  full_join(multilanguage_fixed)
+```
+
+Now that we have a cleaner dataset, I feel more comfortable with using more stringr functions for mutating.
+
+```{r}
+lipidata <- lipid_new |>
+  mutate(
+    # Extracting only the abbreviated journal name, from the full citation format "journal" column.
+    j_name = str_extract(journal, "^\\d*\\. [A-Za-z].*?\\."),
+    j_name = str_replace(j_name, "^\\d*\\.", ""),
+    # Extracting only the published date, from the full citation format "journal" column. Though this is not parsed into date and is still in character vectors. 
+    date_published = str_extract(journal, " \\d{4}.*\\d*;| \\d{4}.*\\d*\\.| \\d{4}.*\\d*:"),
+    date_published = str_replace(date_published, "(;|:|\\.).*", ""),
+    # Removing the redundant element from author information column.
+    author_information = str_remove(author_information, "Author information:"),
+    # Extracting the year, month, and date, therefore it would be easier to play with if I need it. I do this because a lot of them only have incomplete dates. 
+    year = str_extract(date_published, "\\d{4}"),
+    month = str_extract(date_published, "[A-Za-z]{3}"),
+    day = str_extract(date_published, " \\d{1,2}$"),
+    # Counting the number of authors for each scientific article. Might be something interesting that I would like to know.
+    num_authors = str_count(authors, ","),
+    num_authors = num_authors + 1,
+    # Extracting the First Author and their main institution foe each scientific article.
+    FA = str_extract(authors, "^[A-Z](\\w|-)* [A-Za-z]{1,}"),
+    FA_institution = str_remove(str_extract(author_information, "\\(1\\)[^\\(]*"), "\\(1\\)"),
+    # Counting the number of words and characters for each abstract. 
+    abstract_words = str_count(abstract, "([^ ]+)"),
+    abstract_chr = str_length(abstract),
+    # Counting the number of words and characters for each title. 
+    title_words = str_count(title, "([^ ]+)"),
+    title_length = str_length(title)) |>
+  # We do not really need this actually, so I would just exclude them from being incorporated into the cleaner version of the data frame. 
+  select(!journal, !doi)
+```
+
+### New data frame after wrangling and tidying!
+
+```{r}
+write_csv(lipidata, "~/SDS264_S26/Project/MP1/lipidframe.csv")
+```

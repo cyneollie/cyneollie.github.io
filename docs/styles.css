@@ -1,0 +1,65 @@
+/*-- scss:defaults --*/
+
+// Import fonts (define mainfont in _quarto.yml)
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+// fonts
+$nunito: 'Nunito', sans-serif; 
+$josefin: 'Josefin Sans', sans-serif; 
+
+/*-- scss:rules --*/
+
+/* ELEMENT SELECTORS */
+
+// animate logo (rises on hover; HT Briana Barajas :) https://github.com/briana-barajas/briana-barajas.github.io/blob/main/styles.scss )
+.navbar-logo {
+  transition: all 0.3s;
+}
+
+.navbar-logo:hover {
+  transform: translateY(-4px);
+}
+
+/* blog post category color
+.quarto-title .quarto-categories .quarto-category {
+  color: $terracotta; 
+}*/
+
+// blog post category hover color
+.quarto-title .quarto-categories .quarto-category:hover {
+  color: $terracotta-dark;
+}
+
+// listing page item category color
+/*.quarto-grid-item .listing-categories .listing-category  {
+  color: $terracotta;
+  border-color: $terracotta;
+}*/
+
+// listing page item category hover color
+.quarto-grid-item .listing-categories .listing-category:hover  {
+  color: $terracotta-dark;
+  border-color: $terracotta-dark;
+}
+
+// listing page "Categories" selction color
+.quarto-listing-category .category.active {
+  color: $terracotta;
+}
+
+// Color panel-tabset content area cream
+.panel-tabset .tab-content {
+  background-color: $gray-green;
+  padding: 0.5em;
+}
+
+// Color in panel-tabset tabs (non-selected tab)
+.panel-tabset .nav-tabs .nav-link {
+  background-color: $gray-green;
+}
+
+// Color in panel-tabset tab (selected tab) 
+.panel-tabset .nav-tabs .nav-link.active {
+  background-color: $terracotta;
+  color: white;
+}

@@ -1,11 +1,21 @@
 ---
-title: "cyneollie.github.io"
+title: "Cynthia Budiyanto"
+image: images/fun_pic.JPG
+toc: false
+about:
+  template: jolla
+  image-shape: round
+  image-width: 10cm
+  links: 
+    - text: LinkedIn
+      href: https://www.linkedin.com/in/cynthia-budiyanto/
+      icon: linkedin
+    - text: Github
+      href: https://github.com/cyneollie
+      icon: github
+    - text: Email
+      href: mailto:budiya1@stolaf.edu
+      icon: envelope-fill
 ---
 
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-
-```{r}
-1 + 1
-```
+Hi everyone! {{< fa grin title="Grinning face" >}} My name is Cynthia Budiyanto and I am an international student from Indonesia at [St. Olaf College](https://wp.stolaf.edu/). I am majoring in Biology and Statistics & Data Science, with a concentration in Biomolecular Science. In my college, I am actively involved in research and student teaching. I am passionate about scientific development and I would love to do research that is application-driven, aiming to produce computational models that integrate diverse data sources to better understand and treat diseases. **Welcome to my website!**

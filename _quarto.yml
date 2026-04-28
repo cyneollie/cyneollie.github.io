@@ -1,24 +1,45 @@
 project:
   type: website
   output-dir: docs
-  
-# ~ additional metadata excluded for brevity ~
 
 website:
-  title: "cyneollie.github.io"
+  title: "Cynthia Budiyanto"
   navbar:
-    left:
+    right:
       - href: index.qmd
         text: Home
       - about.qmd
+      - href: writings!.qmd
+        text: Blogs
+      - href: gallery.qmd
+        text: Photography
+      - href: resume/cbresume.pdf
+        text: Resume
+      - text: SDS264
+        menu:
+          - text: Text Analysis
+            href: MP1.qmd
+            target: _blank
+          - text: Choropleth Project
+            href: chloro.qmd
+      - text: Reach out!
+        menu:
+          - icon: linkedin
+            text: LinkedIn
+            href: https://www.linkedin.com/in/cynthia-budiyanto/
+            target: _blank
+          - icon: envelope-fill
+            text: Email
+            href: mailto:budiya1@stolaf.edu
+  page-footer: 
+    left: © 2026 Cynthia Budiyanto
+    right: This website is built with {{< fa heart title="a heart" >}}, [{{< fa brands github title="GitHub octocat logo" >}}](https://github.com/cyneollie/cyneollie.github.io.git){target=_blank}, [{{< fa brands r-project title="R Project" >}}](https://www.r-project.org/about.html){target=_blank} and [Quarto](https://quarto.org/){target=_blank}
 
 format:
   html:
-    theme:
-      - cosmo
-      - brand
-    css: styles.css
+    page-layout: full
+    sidebar: false
+    theme: 
+      - styles.scss
+    mainfont: Nunito
     toc: true
-
-
-

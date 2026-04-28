@@ -1,0 +1,16 @@
+---
+title: "Fun short scribbles!"
+subtitle: "My ponders and takes about life."
+listing:
+  contents: blogging
+  sort: "date desc"
+  type: default
+  image-align: right
+  max-description-length: 175
+  date-format: medium
+  categories: true
+  sort-ui: false
+  filter-ui: false
+page-layout: full
+title-block-banner: true
+---
