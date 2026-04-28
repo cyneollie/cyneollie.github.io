@@ -1,45 +1,44 @@
 ---
 title: "About"
+subtitle: "What does Cynthia enjoy to do?"
+title-block-banner: true
 ---
 
 ## {{< fa flask title="Laboratory flask for chemistry experiments" >}} i love being in lab! 
 
 I am a member of the Lipid Lab and we are currently investigating the mechanisms of lipid droplet synthesis and degradation in *Tetrahymena thermophila*! I am also an internationally certified [Supplemental Instruction](https://info.umkc.edu/si/) leader for introductory chemistry courses, namely CHEM 122: Introductory Chemistry and CHEM 126: Energies and Rates of Chemical Reaction. 
 
-```{r}
-#| echo: false
-knitr::include_graphics("images/lab.jpeg")
-```
+<img class="img-styling" src="images/lab.jpeg" width="70%">
+
 ::: {.center-text .small-text .dark-gray-text .topbr}
 Me in the lab!
 :::
 
+
+
 ## {{< fa hiking title="A person with a backpack and trekking pole" >}} i love hiking! 
 
-```{r}
-#| echo: false
-knitr::include_graphics("images/hike.jpeg")
-```
+<img class="img-styling" src="images/hike.jpeg" width="70%">
+
+
 ::: {.center-text .extra-small-text .dark-gray-text .topbr}
 While in Georgia! Kojori to Asureti hike!
 :::
 
 <hr>
 
-```{r}
-#| echo: false
-knitr::include_graphics("images/hike2.JPG")
-```
+<img class="img-styling" src="images/hike2.JPG" width="70%">
+
+
 ::: {.center-text .extra-small-text .dark-gray-text .topbr}
 Somewhere in Armenia :) Pretty sure it was in Areni!
 :::
 
 <hr>
 
-```{r}
-#| echo: false
-knitr::include_graphics("images/hike3.jpg")
-```
+<img class="img-styling" src="images/hike3.jpg" width="70%">
+
+
 ::: {.center-text .extra-small-text .dark-gray-text .topbr}
 Itasca State Park during Fall Break!
 :::
