@@ -187,14 +187,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#introduction-and-rationale" id="toc-introduction-and-rationale" class="nav-link active" data-scroll-target="#introduction-and-rationale">Introduction and Rationale</a></li>
   <li><a href="#webscraping-and-data-production" id="toc-webscraping-and-data-production" class="nav-link" data-scroll-target="#webscraping-and-data-production">Webscraping and Data Production</a></li>
   <li><a href="#data-wrangling-tidying" id="toc-data-wrangling-tidying" class="nav-link" data-scroll-target="#data-wrangling-tidying">Data Wrangling &amp; Tidying</a></li>
-  <li><a href="#text-analysis" id="toc-text-analysis" class="nav-link" data-scroll-target="#text-analysis">Text Analysis</a></li>
+  <li><a href="#text-analysis" id="toc-text-analysis" class="nav-link" data-scroll-target="#text-analysis">Text Analysis</a>
+  <ul class="collapse">
   <li><a href="#common-words-based-on-all-scraped-articles" id="toc-common-words-based-on-all-scraped-articles" class="nav-link" data-scroll-target="#common-words-based-on-all-scraped-articles">Common words based on all scraped articles</a></li>
+  </ul></li>
   <li><a href="#common-words-based-on-top-13-contributors" id="toc-common-words-based-on-top-13-contributors" class="nav-link" data-scroll-target="#common-words-based-on-top-13-contributors">Common words based on TOP 13 contributors</a></li>
   <li><a href="#common-words-based-on-top-5-journals" id="toc-common-words-based-on-top-5-journals" class="nav-link" data-scroll-target="#common-words-based-on-top-5-journals">Common words based on TOP 5 journals</a></li>
-  <li><a href="#bigram-based-on-all-articles" id="toc-bigram-based-on-all-articles" class="nav-link" data-scroll-target="#bigram-based-on-all-articles">Bigram based on all articles</a></li>
-  <li><a href="#trigram-based-on-all-articles" id="toc-trigram-based-on-all-articles" class="nav-link" data-scroll-target="#trigram-based-on-all-articles">Trigram based on all articles</a></li>
-  <li><a href="#bigram-based-on-top-authors" id="toc-bigram-based-on-top-authors" class="nav-link" data-scroll-target="#bigram-based-on-top-authors">Bigram based on top authors</a></li>
-  <li><a href="#trigram-based-on-top-authors" id="toc-trigram-based-on-top-authors" class="nav-link" data-scroll-target="#trigram-based-on-top-authors">Trigram based on top authors</a></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
   <li><a href="#conclusion-and-future-projects" id="toc-conclusion-and-future-projects" class="nav-link" data-scroll-target="#conclusion-and-future-projects">Conclusion and Future Projects</a></li>
   </ul>
@@ -264,25 +262,23 @@ ul.task-list li input[type="checkbox"] {
 <p><br></p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-5b09d00a927ab35c5dab" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-5b09d00a927ab35c5dab">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6"],["Li Y","Wang Y","Zhang Y","Zhang Y","Li Y","Li Y"],["Department of Traditional Chinese Medicine, Wuhan Fourth Hospital.","Department of Rehabilitation, The Fourth Clinical Medical College of Xinjiang \nMedical University, Urumqi 830000, China; School of Rehabilitation Science, \nShanghai University of Traditional Chinese Medicine, Shanghai 201203, China.\n","Department of Animal Science, College of Agriculture, Yanbian University, \nYanji, Jilin Province, China.","Department of Anesthesiology, Wuhan University, Renmin Hospital, Wuhan, \nChina.","Shanghai Key Laboratory of Orthopedic Implants, Department of Orthopedics, \nNinth People's Hospital, Shanghai Jiao Tong University School of Medicine, \nShanghai, China.","Key Laboratory of Carbohydrate Chemistry and Biotechnology, Ministry of \nEducation, Jiangnan University, Wuxi, 214122, China; Science Center for Future \nFoods, Ministry of Education, Jiangnan University, Wuxi, 214122, China.\n"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>FA<\/th>\n      <th>FA_institution<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"FA","targets":1},{"name":"FA_institution","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-faaf4cd66d285118cc43" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-faaf4cd66d285118cc43">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6"],["Li Y","Wang Y","Zhang Y","Zhang Y","Li Y","Li Y"],["Department of Traditional Chinese Medicine, Wuhan Fourth Hospital.","Department of Rehabilitation, The Fourth Clinical Medical College of Xinjiang \nMedical University, Urumqi 830000, China; School of Rehabilitation Science, \nShanghai University of Traditional Chinese Medicine, Shanghai 201203, China.\n","Department of Animal Science, College of Agriculture, Yanbian University, \nYanji, Jilin Province, China.","Department of Anesthesiology, Wuhan University, Renmin Hospital, Wuhan, \nChina.","Shanghai Key Laboratory of Orthopedic Implants, Department of Orthopedics, \nNinth People's Hospital, Shanghai Jiao Tong University School of Medicine, \nShanghai, China.","Key Laboratory of Carbohydrate Chemistry and Biotechnology, Ministry of \nEducation, Jiangnan University, Wuxi, 214122, China; Science Center for Future \nFoods, Ministry of Education, Jiangnan University, Wuxi, 214122, China.\n"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>FA<\/th>\n      <th>FA_institution<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"FA","targets":1},{"name":"FA_institution","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p><br></p>
 <p>We can eliminate this problem by using first author and institutions as a group, therefore, we will get each distinctive person, coming from different institution, even though some may have the same name.</p>
-<p><br></p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-92875e8ba01795f25023" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-92875e8ba01795f25023">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6"],["Dibwe DF","Guan B","Hanano A","Pacia MZ","Farooq S","Ghorpade M"],["Faculty of Health Sciences, Hokkaido University, Kita-12, Nishi-5, Kita-Ku, \nSapporo 060-0812, Japan.\n","College of Food Science, Shenyang Agricultural University, Shenyang 11086, \nChina.\n","Department of Molecular Biology and Biotechnology, Atomic Energy Commission \nof Syria","Jagiellonian Centre for Experimental Therapeutics","College of Biosystems Engineering and Food Science, Zhejiang Key Laboratory \nfor Agro-Food Processing, Zhejiang University, Hangzhou 310058, China.\n","Department of Chemistry, Indian Institute of Technology Gandhinagar, Palaj, \nGandhinagar 382055, India. sriram@iitgn.ac.in.\n"],[4,4,4,4,3,3]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>FA<\/th>\n      <th>FA_institution<\/th>\n      <th>freq<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":3},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"FA","targets":1},{"name":"FA_institution","targets":2},{"name":"freq","targets":3}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-71c2da5a664c3443ad89" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-71c2da5a664c3443ad89">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6"],["Dibwe DF","Guan B","Hanano A","Pacia MZ","Farooq S","Ghorpade M"],["Faculty of Health Sciences, Hokkaido University, Kita-12, Nishi-5, Kita-Ku, \nSapporo 060-0812, Japan.\n","College of Food Science, Shenyang Agricultural University, Shenyang 11086, \nChina.\n","Department of Molecular Biology and Biotechnology, Atomic Energy Commission \nof Syria","Jagiellonian Centre for Experimental Therapeutics","College of Biosystems Engineering and Food Science, Zhejiang Key Laboratory \nfor Agro-Food Processing, Zhejiang University, Hangzhou 310058, China.\n","Department of Chemistry, Indian Institute of Technology Gandhinagar, Palaj, \nGandhinagar 382055, India. sriram@iitgn.ac.in.\n"],[4,4,4,4,3,3]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>FA<\/th>\n      <th>FA_institution<\/th>\n      <th>freq<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":3},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"FA","targets":1},{"name":"FA_institution","targets":2},{"name":"freq","targets":3}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p><br></p>
 <p>Good enough for me! Even though I believe we missed a couple authors here and there, because of the enormous inconsistency in how the institution was reported in literature publications, we received some good results, and we can focus on this for our text analysis.</p>
 <p>Note: The behind-the-scene codes can be found in <a href="https://github.com/cyneollie/SDS264_S26/blob/a8b60efb632c3eaffc6b2d40e292885a9c1590a3/Project/MP1/MP1.qmd">my Github repository</a>.</p>
-</section>
-<section id="common-words-based-on-all-scraped-articles" class="level2">
-<h2 class="anchored" data-anchor-id="common-words-based-on-all-scraped-articles">Common words based on all scraped articles</h2>
+<section id="common-words-based-on-all-scraped-articles" class="level3">
+<h3 class="anchored" data-anchor-id="common-words-based-on-all-scraped-articles">Common words based on all scraped articles</h3>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -293,6 +289,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <p><br></p>
+</section>
 </section>
 <section id="common-words-based-on-top-13-contributors" class="level2">
 <h2 class="anchored" data-anchor-id="common-words-based-on-top-13-contributors">Common words based on TOP 13 contributors</h2>
@@ -320,48 +317,48 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p><br></p>
 <p>Simple one-word analysis might be interesting in the beginning, but we can quickly realise that it is too hard to infer anything from it. Therefore, what we will do next is bigram or two-words analysis.</p>
-</section>
-<section id="bigram-based-on-all-articles" class="level2">
-<h2 class="anchored" data-anchor-id="bigram-based-on-all-articles">Bigram based on all articles</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-17a046f86091221187c3" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-17a046f86091221187c3">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6"],["adipose tissue","endoplasmic reticulum","oxidative stress","signaling pathway","hepatic steatosis","body weight"],[1328,914,899,561,556,502]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>bigram<\/th>\n      <th>n<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"bigram","targets":1},{"name":"n","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-35c1d0160b6bd7925ad2" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-35c1d0160b6bd7925ad2">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6"],["adipose tissue","endoplasmic reticulum","oxidative stress","signaling pathway","hepatic steatosis","body weight"],[1328,914,899,561,556,502]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>bigram<\/th>\n      <th>n<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"bigram","targets":1},{"name":"n","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="cell-output-display">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-ab8f48c20b54fcba9fa0" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-ab8f48c20b54fcba9fa0">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6"],["reactive oxygen species","peroxisome proliferator activated","proliferator activated receptor","endoplasmic reticulum er","oxygen species ros","low density lipoprotein"],[441,414,408,392,244,243]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>bigram<\/th>\n      <th>n<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"bigram","targets":1},{"name":"n","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="cell-output-display">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-c26fb1bb6758230525e8" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-c26fb1bb6758230525e8">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6"],["clo pxgs","ps nps","β casein","mfgm glycoproteins","rna seq","ga ch"],[11,10,10,9,6,5]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>bigram<\/th>\n      <th>n<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"bigram","targets":1},{"name":"n","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="cell-output-display">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-27a75d455848cbe28b06" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-27a75d455848cbe28b06">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6"],["a2 β casein","β carboline alkaloid","adipose tissue browning","base cross linking","bilayer contact angle","branchial epithelial liftings"],[4,3,2,2,2,2]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>bigram<\/th>\n      <th>n<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"bigram","targets":1},{"name":"n","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
-</section>
-<section id="trigram-based-on-all-articles" class="level2">
-<h2 class="anchored" data-anchor-id="trigram-based-on-all-articles">Trigram based on all articles</h2>
+<p>We have got the relevant two-words and three-words combination. Now, it is time to visualise these combinations using a network graph.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-7774d0c1dcc0fc4fd4a2" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-7774d0c1dcc0fc4fd4a2">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6"],["reactive oxygen species","peroxisome proliferator activated","proliferator activated receptor","endoplasmic reticulum er","oxygen species ros","low density lipoprotein"],[441,414,408,392,244,243]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>bigram<\/th>\n      <th>n<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"bigram","targets":1},{"name":"n","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div>
+<figure class="figure">
+<p><img src="MP1_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
 </div>
-</section>
-<section id="bigram-based-on-top-authors" class="level2">
-<h2 class="anchored" data-anchor-id="bigram-based-on-top-authors">Bigram based on top authors</h2>
+</div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-433f4a1d0c60bb85554b" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-433f4a1d0c60bb85554b">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6"],["clo pxgs","ps nps","β casein","mfgm glycoproteins","rna seq","ga ch"],[11,10,10,9,6,5]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>bigram<\/th>\n      <th>n<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"bigram","targets":1},{"name":"n","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div>
+<figure class="figure">
+<p><img src="MP1_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
 </div>
-</section>
-<section id="trigram-based-on-top-authors" class="level2">
-<h2 class="anchored" data-anchor-id="trigram-based-on-top-authors">Trigram based on top authors</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-5f8a426b5f8e18804db8" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-5f8a426b5f8e18804db8">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6"],["a2 β casein","β carboline alkaloid","adipose tissue browning","base cross linking","bilayer contact angle","branchial epithelial liftings"],[4,3,2,2,2,2]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>bigram<\/th>\n      <th>n<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"bigram","targets":1},{"name":"n","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
-</div>
-<p><br></p>
 <p>Another interesting analysis we can do is finding tf-idf statistics. It is highly useful in the application of search engines, as this is the statistics behind ranking document in relevance to a query. Through this statistics, we can identify the most descriptive words in a document. In this case, I would try to find the important words for the content of Top 5 Journal Publishers for LD research. In this case, tf-idf will find the important words of each journal by decreasing the weight for commonly used words and increasing the weight for words that are not used very much in a collection of articles We want to find words that may or may not define one journal as opposed to others.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-2a2943442fd5ad0dad22" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-2a2943442fd5ad0dad22">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5"],["Int J Mol Sci.","Food Chem.","Sci Rep.","Food Res Int.","Nat Commun."],[279,160,128,124,112]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>j_name<\/th>\n      <th>freq<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"j_name","targets":1},{"name":"freq","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-a7a0341462b01d11534d" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-a7a0341462b01d11534d">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5"],["Int J Mol Sci.","Food Chem.","Sci Rep.","Food Res Int.","Nat Commun."],[279,160,128,124,112]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>j_name<\/th>\n      <th>freq<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"j_name","targets":1},{"name":"freq","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>We have the Top 5 journals listed above, some of them are specialising in food science, some are in molecular science, and the rest are in general natural sciences, including physics, chemistry, earth sciences, medicine, and biology.</p>
@@ -369,7 +366,16 @@ ul.task-list li input[type="checkbox"] {
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="MP1_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="MP1_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="MP1_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>

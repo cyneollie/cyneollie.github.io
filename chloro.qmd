@@ -87,6 +87,7 @@ ggplot(static_ver, aes(long, lat, group = group, fill = prolife)) +
   )
 ```
 
+This static plot maps the level of pro-life support across US states, except Hawaii and Alaska. We can say that by judging the maps qualitatively, many of the states have neutral support or opinion towards this issue, though we can definitely see an increase in support around the southeast region. Meanwhile, westcoast and eastcoast seem to have the lowest support for pro-life movement. Utah has the highest state for pro-life support, as the color of the state is bright yellow. Meanwhile by briefly looking, it seems like California has the lowest support for pro-life. This choropleth is useful to creatively map where each state stands on this issue. However, it is initially really hard for me to know, what are the states represented as there is no information given. 
 
 ## Interactive plot: Public opinion on pro-life 
 
@@ -119,6 +120,7 @@ leaflet(inter_ver) |>
   )
 ```
 
+<br>
 
 ## Static plot: Gay Support in the US
 
@@ -136,6 +138,7 @@ ggplot(static_ver, aes(long, lat, group = group, fill = gay_support3)) +
   )
 ```
 
+In this static map, plotting the level of gay support across US states, we have a categorical variable instead of having a numerical variable. Here, we have three variables: low, medium, and high support. In the previous static map that we saw, there was a high support for pro-life movement in southeast region, where now, we can see that there is low support for gay rights in that region. Personally, this is an interesting pattern to see. In westcoast and eastcoast, previously we see lower support for pro-life movement. Now, these regions are dominated by high and medium support level towards this issue. In areas where we have neutral pro-life support level, which is around 30-40, we can see that in this plot, the states are denoted by the green colour or medium support. 
 
 ## Interactive plot: Gay Support in the US
 
