@@ -8,11 +8,10 @@ website:
     right:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - href: about.qmd
+        text: About
       - href: writings!.qmd
         text: Blogs
-      - href: gallery.qmd
-        text: Photography
       - href: resume/cbresume.pdf
         text: Resume
       - text: SDS264

@@ -1,9 +1,7 @@
 ---
 title: "PubMed Text Analysis"
 subtitle: SDS 264 Spring 2026 - Mini Project 1
-format: html
-editor_options: 
-  chunk_output_type: console
+title-block-banner: true
 ---
 
 ## Introduction and Rationale
@@ -34,6 +32,8 @@ library(tidytext)
 library(textdata)
 library(igraph)
 library(ggraph)
+library(kableExtra)
+library(DT)
 
 lipidframe <- read_csv("~/SDS264_S26/Project/MP1/lipidframe.csv")
 ```
@@ -46,21 +46,36 @@ lipidframe |>
   drop_na(FA) |>
   count(FA) |>
   arrange(desc(n)) |>
-  slice_head(n = 5)
+  slice_head(n = 5) |>
+  kable()
 ```
+ 
+<br>
+ 
+That's a whopping number of observations for some people! After investigating, turns out that many of them are all very common names, and after observing, we can almost conclusively say that each individual there is different, and they come from different institutions.
+
+<br>
 
 ```{r}
-#| echo: false
-# That's a whopping number of observations for some people! Let's check their full details.
-lipidframe |>
+#| include: false
+a <- lipidframe |>
   filter(FA %in% c("Wang Y", "Zhang Y", "Li Y", "Li X", "Liu Y")) |>
   select(FA, FA_institution)
 ```
 
-Turns out that many of them are all very common names, and after observing, we can almost conclusively say that each individual there is different, and they come from different institutions. So now, I check for a combination of author-institution.
-
 ```{r}
 #| echo: false
+datatable(head(a))
+```
+
+<br>
+
+We can eliminate this problem by using first author and institutions as a group, therefore, we will get each distinctive person, coming from different institution, even though some may have the same name.
+
+<br>
+
+```{r}
+#| include: false
 top_authors <- lipidframe |>
   group_by(FA, FA_institution) |>
   summarise(freq = n(), .groups = "drop") |>
@@ -75,6 +90,20 @@ top5_journals <- lipidframe |>
   summarise(freq = n()) |>
   slice_max(freq, n = 5)
 ```
+
+```{r}
+#| echo: false
+datatable(head(top_authors))
+```
+
+```{r}
+#| echo: false
+#| include: false
+
+kable(top5_journals)
+```
+
+<br>
 
 Good enough for me! Even though I believe we missed a couple authors here and there, because of the enormous inconsistency in how the institution was reported in literature publications, we received some good results, and we can focus on this for our text analysis.
 
@@ -98,9 +127,11 @@ stop_words_fix <-  dplyr::bind_rows(stop_words, mystopwords)
 view(stop_words_fix)
 ```
 
+## Common words based on all scraped articles
+
 ```{r}
 #| echo: false
-# Based on ALL articles from the scraped data set
+#| message: false
 lipidframe |>
   select(title, abstract) |>
   mutate(title = str_to_lower(title),
@@ -112,9 +143,25 @@ lipidframe |>
   slice_max(n, n = 20) |>
   ggplot(aes(fct_reorder(word, n), n)) +
   geom_col() +
-  coord_flip()
+  coord_flip() +
+  labs(
+    x = "Word",
+    y = "Count"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.background = element_rect(fill = "transparent", color = NA),
+    panel.background = element_rect(fill = "transparent", color = NA))
+```
 
-# Based on the TOP 13 contributors
+<br>
+
+## Common words based on TOP 13 contributors
+
+```{r}
+#| echo: false
+#| message: false
+
 lipidframe |>
   semi_join(top_authors, by = c("FA", "FA_institution")) |>
   select(title, abstract) |>
@@ -127,9 +174,26 @@ lipidframe |>
   slice_max(n, n = 20) |>
   ggplot(aes(fct_reorder(word, n), n)) +
   geom_col() +
-  coord_flip()
+  coord_flip() +
+  labs(
+    x = "Word",
+    y = "Count"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.background = element_rect(fill = "transparent", color = NA),
+    panel.background = element_rect(fill = "transparent", color = NA))
+```
 
-# Based on the TOP 5 journals
+<br>
+
+## Common words based on TOP 5 journals
+
+```{r}
+#| echo: false
+#| message: false
+
+
 lipidframe |>
   semi_join(top5_journals, by = c("j_name")) |>
   select(title, abstract) |>
@@ -142,8 +206,18 @@ lipidframe |>
   slice_max(n, n = 20) |>
   ggplot(aes(fct_reorder(word, n), n)) +
   geom_col() +
-  coord_flip()
+  coord_flip() +
+  labs(
+    x = "Word",
+    y = "Count"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.background = element_rect(fill = "transparent", color = NA),
+    panel.background = element_rect(fill = "transparent", color = NA))
 ```
+
+<br>
 
 Simple one-word analysis might be interesting in the beginning, but we can quickly realise that it is too hard to infer anything from it. Therefore, what we will do next is bigram or two-words analysis. 
 
@@ -200,18 +274,40 @@ topcont_trigram  <- lipidframe |>
   unite(bigram, word1, word2, word3, sep = " ")
 ```
 
+
+## Bigram based on all articles
 ```{r}
 #| echo: false
-print(ldf_bigram)
-print(ldf_trigram)
-print(topcont_bigram)
-print(topcont_trigram)
+datatable(head(ldf_bigram))
 ```
 
-We have got the relevant two-words and three-words combination. Now, it is time to visualise these combinations using a network graph. 
 
+## Trigram based on all articles
 ```{r}
 #| echo: false
+datatable(head(ldf_trigram))
+```
+
+
+## Bigram based on top authors
+```{r}
+#| echo: false
+datatable(head(topcont_bigram))
+```
+
+
+## Trigram based on top authors
+```{r}
+#| echo: false
+datatable(head(topcont_trigram))
+```
+
+<br>
+
+```{r}
+#| eval: false
+#| include: false
+
 ldf_bigram |>
   filter(n > 100) |>
   graph_from_data_frame() |>
@@ -224,7 +320,9 @@ ldf_bigram |>
 ```
 
 ```{r}
-#| echo: false
+#| eval: false
+#| include: false
+
 ldf_trigram |>
   filter(n > 30) |>
   graph_from_data_frame() |>
@@ -245,7 +343,7 @@ top5_journals <- lipidframe |>
   summarise(freq = n()) |>
   slice_max(freq, n = 5)
 
-print(top5_journals)
+datatable(head(top5_journals))
 ```
 
 We have the Top 5 journals listed above, some of them are specialising in food science, some are in molecular science, and the rest are in general natural sciences, including physics, chemistry, earth sciences, medicine, and biology.
@@ -270,7 +368,8 @@ lipidframe |>
   ggplot(aes(x = fct_reorder(bigram, tf_idf), y = tf_idf, fill = j_name)) +
     geom_col(show.legend = FALSE) +
     coord_flip() +
-  facet_wrap(~j_name, scales = "free")
+  facet_grid(j_name ~ ., scales = "free_y", space = "free_y") +
+  theme_minimal()
 ```
 
 ```{r}
@@ -294,7 +393,9 @@ lipidframe |>
   ggplot(aes(x = fct_reorder(bigram, tf_idf), y = tf_idf, fill = j_name)) +
     geom_col(show.legend = FALSE) +
     coord_flip() +
-  facet_wrap(~ j_name, scales = "free")
+  facet_grid(j_name ~ ., scales = "free_y", space = "free_y") +
+  theme_minimal()
+
 ```
 
 ## Results

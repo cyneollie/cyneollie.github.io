@@ -1,6 +1,6 @@
 ---
 title: "About"
-subtitle: "What does Cynthia enjoy to do?"
+subtitle: "A gallery of the things Cynthia enjoy to do!"
 title-block-banner: true
 ---
 

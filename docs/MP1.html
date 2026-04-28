@@ -72,6 +72,16 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link href="site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="site_libs/datatables-binding-0.34.0/datatables.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
+<script src="site_libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
 
 
 </head>
@@ -79,7 +89,7 @@ ul.task-list li input[type="checkbox"] {
 <body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -104,10 +114,6 @@ ul.task-list li input[type="checkbox"] {
   <li class="nav-item">
     <a class="nav-link" href="./writings!.html"> 
 <span class="menu-text">Blogs</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./gallery.qmd"> 
-<span class="menu-text">Photography</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./resume/cbresume.pdf"> 
@@ -153,7 +159,24 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-left">
+      <h1 class="title">PubMed Text Analysis</h1>
+            <p class="subtitle lead">SDS 264 Spring 2026 - Mini Project 1</p>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-page-left">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -165,32 +188,23 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#webscraping-and-data-production" id="toc-webscraping-and-data-production" class="nav-link" data-scroll-target="#webscraping-and-data-production">Webscraping and Data Production</a></li>
   <li><a href="#data-wrangling-tidying" id="toc-data-wrangling-tidying" class="nav-link" data-scroll-target="#data-wrangling-tidying">Data Wrangling &amp; Tidying</a></li>
   <li><a href="#text-analysis" id="toc-text-analysis" class="nav-link" data-scroll-target="#text-analysis">Text Analysis</a></li>
+  <li><a href="#common-words-based-on-all-scraped-articles" id="toc-common-words-based-on-all-scraped-articles" class="nav-link" data-scroll-target="#common-words-based-on-all-scraped-articles">Common words based on all scraped articles</a></li>
+  <li><a href="#common-words-based-on-top-13-contributors" id="toc-common-words-based-on-top-13-contributors" class="nav-link" data-scroll-target="#common-words-based-on-top-13-contributors">Common words based on TOP 13 contributors</a></li>
+  <li><a href="#common-words-based-on-top-5-journals" id="toc-common-words-based-on-top-5-journals" class="nav-link" data-scroll-target="#common-words-based-on-top-5-journals">Common words based on TOP 5 journals</a></li>
+  <li><a href="#bigram-based-on-all-articles" id="toc-bigram-based-on-all-articles" class="nav-link" data-scroll-target="#bigram-based-on-all-articles">Bigram based on all articles</a></li>
+  <li><a href="#trigram-based-on-all-articles" id="toc-trigram-based-on-all-articles" class="nav-link" data-scroll-target="#trigram-based-on-all-articles">Trigram based on all articles</a></li>
+  <li><a href="#bigram-based-on-top-authors" id="toc-bigram-based-on-top-authors" class="nav-link" data-scroll-target="#bigram-based-on-top-authors">Bigram based on top authors</a></li>
+  <li><a href="#trigram-based-on-top-authors" id="toc-trigram-based-on-top-authors" class="nav-link" data-scroll-target="#trigram-based-on-top-authors">Trigram based on top authors</a></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
   <li><a href="#conclusion-and-future-projects" id="toc-conclusion-and-future-projects" class="nav-link" data-scroll-target="#conclusion-and-future-projects">Conclusion and Future Projects</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">PubMed Text Analysis</h1>
-<p class="subtitle lead">SDS 264 Spring 2026 - Mini Project 1</p>
-</div>
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
-<div class="quarto-title-meta column-page-left">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
 
 
 <section id="introduction-and-rationale" class="level2">
@@ -212,138 +226,63 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="text-analysis">Text Analysis</h2>
 <p>When I first examined the fresh data set generated by the python script, I was highly curious who is the most published author in this PubMed data set, with the topic of Lipid Droplet. So, my text analysis started modest and simple, let’s see who is the major “First Author”, which is most of the times regarded as the most significant intellectual, experimental, and writing contributor to a research paper. When a paper is cited, that first author is usually who will be referenced to, both through bibliography or through word of mouth. Let’s see who is the major “First Author” in this data set.</p>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 2
-  FA          n
-  &lt;chr&gt;   &lt;int&gt;
-1 Wang Y     56
-2 Zhang Y    56
-3 Li Y       55
-4 Li X       38
-5 Liu Y      34</code></pre>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">FA</th>
+<th style="text-align: right;">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Wang Y</td>
+<td style="text-align: right;">56</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Zhang Y</td>
+<td style="text-align: right;">56</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Li Y</td>
+<td style="text-align: right;">55</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Li X</td>
+<td style="text-align: right;">38</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Liu Y</td>
+<td style="text-align: right;">34</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
+<p><br></p>
+<p>That’s a whopping number of observations for some people! After investigating, turns out that many of them are all very common names, and after observing, we can almost conclusively say that each individual there is different, and they come from different institutions.</p>
+<p><br></p>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 239 × 2
-   FA      FA_institution                                                       
-   &lt;chr&gt;   &lt;chr&gt;                                                                
- 1 Li Y    "Department of Traditional Chinese Medicine, Wuhan Fourth Hospital." 
- 2 Wang Y  "Department of Rehabilitation, The Fourth Clinical Medical College o…
- 3 Zhang Y "Department of Animal Science, College of Agriculture, Yanbian Unive…
- 4 Zhang Y "Department of Anesthesiology, Wuhan University, Renmin Hospital, Wu…
- 5 Li Y    "Shanghai Key Laboratory of Orthopedic Implants, Department of Ortho…
- 6 Li Y    "Key Laboratory of Carbohydrate Chemistry and Biotechnology, Ministr…
- 7 Li X    "Key Laboratory of Animal Genetics, Breeding and Reproduction in the…
- 8 Wang Y  "College of Animal &amp; Veterinary Sciences, Southwest Minzu University…
- 9 Liu Y   "Shaanxi Province Key Laboratory of Bioresources, QinLing-Bashan Mou…
-10 Wang Y  "Department of Clinical Pharmacology, College of Pharmacy, Dalian Me…
-# ℹ 229 more rows</code></pre>
+<div class="cell-output-display">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-5b09d00a927ab35c5dab" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-5b09d00a927ab35c5dab">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6"],["Li Y","Wang Y","Zhang Y","Zhang Y","Li Y","Li Y"],["Department of Traditional Chinese Medicine, Wuhan Fourth Hospital.","Department of Rehabilitation, The Fourth Clinical Medical College of Xinjiang \nMedical University, Urumqi 830000, China; School of Rehabilitation Science, \nShanghai University of Traditional Chinese Medicine, Shanghai 201203, China.\n","Department of Animal Science, College of Agriculture, Yanbian University, \nYanji, Jilin Province, China.","Department of Anesthesiology, Wuhan University, Renmin Hospital, Wuhan, \nChina.","Shanghai Key Laboratory of Orthopedic Implants, Department of Orthopedics, \nNinth People's Hospital, Shanghai Jiao Tong University School of Medicine, \nShanghai, China.","Key Laboratory of Carbohydrate Chemistry and Biotechnology, Ministry of \nEducation, Jiangnan University, Wuxi, 214122, China; Science Center for Future \nFoods, Ministry of Education, Jiangnan University, Wuxi, 214122, China.\n"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>FA<\/th>\n      <th>FA_institution<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"FA","targets":1},{"name":"FA_institution","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
-<p>Turns out that many of them are all very common names, and after observing, we can almost conclusively say that each individual there is different, and they come from different institutions. So now, I check for a combination of author-institution.</p>
+<p><br></p>
+<p>We can eliminate this problem by using first author and institutions as a group, therefore, we will get each distinctive person, coming from different institution, even though some may have the same name.</p>
+<p><br></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-92875e8ba01795f25023" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-92875e8ba01795f25023">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6"],["Dibwe DF","Guan B","Hanano A","Pacia MZ","Farooq S","Ghorpade M"],["Faculty of Health Sciences, Hokkaido University, Kita-12, Nishi-5, Kita-Ku, \nSapporo 060-0812, Japan.\n","College of Food Science, Shenyang Agricultural University, Shenyang 11086, \nChina.\n","Department of Molecular Biology and Biotechnology, Atomic Energy Commission \nof Syria","Jagiellonian Centre for Experimental Therapeutics","College of Biosystems Engineering and Food Science, Zhejiang Key Laboratory \nfor Agro-Food Processing, Zhejiang University, Hangzhou 310058, China.\n","Department of Chemistry, Indian Institute of Technology Gandhinagar, Palaj, \nGandhinagar 382055, India. sriram@iitgn.ac.in.\n"],[4,4,4,4,3,3]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>FA<\/th>\n      <th>FA_institution<\/th>\n      <th>freq<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":3},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"FA","targets":1},{"name":"FA_institution","targets":2},{"name":"freq","targets":3}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<p><br></p>
 <p>Good enough for me! Even though I believe we missed a couple authors here and there, because of the enormous inconsistency in how the institution was reported in literature publications, we received some good results, and we can focus on this for our text analysis.</p>
 <p>Note: The behind-the-scene codes can be found in <a href="https://github.com/cyneollie/SDS264_S26/blob/a8b60efb632c3eaffc6b2d40e292885a9c1590a3/Project/MP1/MP1.qmd">my Github repository</a>.</p>
-<div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Joining with `by = join_by(word)`</code></pre>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="MP1_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Joining with `by = join_by(word)`</code></pre>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="MP1_files/figure-html/unnamed-chunk-6-2.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Joining with `by = join_by(word)`</code></pre>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="MP1_files/figure-html/unnamed-chunk-6-3.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Simple one-word analysis might be interesting in the beginning, but we can quickly realise that it is too hard to infer anything from it. Therefore, what we will do next is bigram or two-words analysis.</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 254,566 × 2
-   bigram                    n
-   &lt;chr&gt;                 &lt;int&gt;
- 1 adipose tissue         1328
- 2 endoplasmic reticulum   914
- 3 oxidative stress        899
- 4 signaling pathway       561
- 5 hepatic steatosis       556
- 6 body weight             502
- 7 binding protein         486
- 8 insulin resistance      453
- 9 reactive oxygen         446
-10 oxygen species          442
-# ℹ 254,556 more rows</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 173,965 × 2
-   bigram                                n
-   &lt;chr&gt;                             &lt;int&gt;
- 1 reactive oxygen species             441
- 2 peroxisome proliferator activated   414
- 3 proliferator activated receptor     408
- 4 endoplasmic reticulum er            392
- 5 oxygen species ros                  244
- 6 low density lipoprotein             243
- 7 activated protein kinase            192
- 8 brown adipose tissue                166
- 9 regulatory element binding          163
-10 sterol regulatory element           161
-# ℹ 173,955 more rows</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1,593 × 2
-   bigram                 n
-   &lt;chr&gt;              &lt;int&gt;
- 1 clo pxgs              11
- 2 ps nps                10
- 3 β casein              10
- 4 mfgm glycoproteins     9
- 5 rna seq                6
- 6 ga ch                  5
- 7 marine fish            5
- 8 mrna isoforms          5
- 9 tpa cyp                5
-10 tpa trdn               5
-# ℹ 1,583 more rows</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 768 × 2
-   bigram                            n
-   &lt;chr&gt;                         &lt;int&gt;
- 1 a2 β casein                       4
- 2 β carboline alkaloid              3
- 3 adipose tissue browning           2
- 4 base cross linking                2
- 5 bilayer contact angle             2
- 6 branchial epithelial liftings     2
- 7 camellia oil body                 2
- 8 casein genotype a1a1              2
- 9 casein milk variant               2
-10 cc bonds equalled                 2
-# ℹ 758 more rows</code></pre>
-</div>
-</div>
-<p>We have got the relevant two-words and three-words combination. Now, it is time to visualise these combinations using a network graph.</p>
+</section>
+<section id="common-words-based-on-all-scraped-articles" class="level2">
+<h2 class="anchored" data-anchor-id="common-words-based-on-all-scraped-articles">Common words based on all scraped articles</h2>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -353,6 +292,10 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+<p><br></p>
+</section>
+<section id="common-words-based-on-top-13-contributors" class="level2">
+<h2 class="anchored" data-anchor-id="common-words-based-on-top-13-contributors">Common words based on TOP 13 contributors</h2>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -362,17 +305,63 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+<p><br></p>
+</section>
+<section id="common-words-based-on-top-5-journals" class="level2">
+<h2 class="anchored" data-anchor-id="common-words-based-on-top-5-journals">Common words based on TOP 5 journals</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="MP1_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>Simple one-word analysis might be interesting in the beginning, but we can quickly realise that it is too hard to infer anything from it. Therefore, what we will do next is bigram or two-words analysis.</p>
+</section>
+<section id="bigram-based-on-all-articles" class="level2">
+<h2 class="anchored" data-anchor-id="bigram-based-on-all-articles">Bigram based on all articles</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-17a046f86091221187c3" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-17a046f86091221187c3">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6"],["adipose tissue","endoplasmic reticulum","oxidative stress","signaling pathway","hepatic steatosis","body weight"],[1328,914,899,561,556,502]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>bigram<\/th>\n      <th>n<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"bigram","targets":1},{"name":"n","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="trigram-based-on-all-articles" class="level2">
+<h2 class="anchored" data-anchor-id="trigram-based-on-all-articles">Trigram based on all articles</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-7774d0c1dcc0fc4fd4a2" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-7774d0c1dcc0fc4fd4a2">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6"],["reactive oxygen species","peroxisome proliferator activated","proliferator activated receptor","endoplasmic reticulum er","oxygen species ros","low density lipoprotein"],[441,414,408,392,244,243]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>bigram<\/th>\n      <th>n<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"bigram","targets":1},{"name":"n","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="bigram-based-on-top-authors" class="level2">
+<h2 class="anchored" data-anchor-id="bigram-based-on-top-authors">Bigram based on top authors</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-433f4a1d0c60bb85554b" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-433f4a1d0c60bb85554b">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6"],["clo pxgs","ps nps","β casein","mfgm glycoproteins","rna seq","ga ch"],[11,10,10,9,6,5]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>bigram<\/th>\n      <th>n<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"bigram","targets":1},{"name":"n","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="trigram-based-on-top-authors" class="level2">
+<h2 class="anchored" data-anchor-id="trigram-based-on-top-authors">Trigram based on top authors</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-5f8a426b5f8e18804db8" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-5f8a426b5f8e18804db8">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6"],["a2 β casein","β carboline alkaloid","adipose tissue browning","base cross linking","bilayer contact angle","branchial epithelial liftings"],[4,3,2,2,2,2]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>bigram<\/th>\n      <th>n<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"bigram","targets":1},{"name":"n","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<p><br></p>
 <p>Another interesting analysis we can do is finding tf-idf statistics. It is highly useful in the application of search engines, as this is the statistics behind ranking document in relevance to a query. Through this statistics, we can identify the most descriptive words in a document. In this case, I would try to find the important words for the content of Top 5 Journal Publishers for LD research. In this case, tf-idf will find the important words of each journal by decreasing the weight for commonly used words and increasing the weight for words that are not used very much in a collection of articles We want to find words that may or may not define one journal as opposed to others.</p>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 2
-  j_name          freq
-  &lt;chr&gt;          &lt;int&gt;
-1 Int J Mol Sci.   279
-2 Food Chem.       160
-3 Sci Rep.         128
-4 Food Res Int.    124
-5 Nat Commun.      112</code></pre>
+<div class="cell-output-display">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-2a2943442fd5ad0dad22" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-2a2943442fd5ad0dad22">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5"],["Int J Mol Sci.","Food Chem.","Sci Rep.","Food Res Int.","Nat Commun."],[279,160,128,124,112]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>j_name<\/th>\n      <th>freq<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"j_name","targets":1},{"name":"freq","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>We have the Top 5 journals listed above, some of them are specialising in food science, some are in molecular science, and the rest are in general natural sciences, including physics, chemistry, earth sciences, medicine, and biology.</p>
@@ -380,16 +369,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="MP1_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="MP1_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="MP1_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>

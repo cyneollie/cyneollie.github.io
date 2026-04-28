@@ -18,4 +18,6 @@ about:
       icon: envelope-fill
 ---
 
-Hi everyone! {{< fa grin title="Grinning face" >}} My name is Cynthia Budiyanto and I am an international student from Indonesia at [St. Olaf College](https://wp.stolaf.edu/). I am majoring in Biology and Statistics & Data Science, with a concentration in Biomolecular Science. In my college, I am actively involved in research and student teaching. I am passionate about scientific development and I would love to do research that is application-driven, aiming to produce computational models that integrate diverse data sources to better understand and treat diseases. **Welcome to my website!**
+Hi everyone! {{< fa grin title="Grinning face" >}} My name is Cynthia Budiyanto and I am an international student from Indonesia at [St. Olaf College](https://wp.stolaf.edu/). I am majoring in Biology and Statistics & Data Science, with a concentration in Biomolecular Science. In my college, I am actively involved in research and student teaching. I am passionate about scientific development and I would love to do research that is application-driven, aiming to produce computational models that integrate diverse data sources to better understand and treat diseases. 
+
+**Welcome to my website!**
