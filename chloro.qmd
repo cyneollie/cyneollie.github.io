@@ -1,12 +1,8 @@
 ---
 title: "Choropleth Map Project"
 subtitle: SDS 264 Spring 2026 - Mini Project 3
-format: html
-editor_options: 
-  chunk_output_type: console
+title-block-banner: true
 ---
-
-
 
 ```{r}
 #| message: false
@@ -74,23 +70,25 @@ inter_ver <- states_sf |>
 ```
 
 
-Numeric variable (static plot):
+## Static plot: Public opinion on pro-life
 
 ```{r}
 #| echo: false
 
 ggplot(static_ver, aes(long, lat, group = group, fill = prolife)) +
   geom_polygon(color = "white", linewidth = 0.2) +
+  coord_quickmap() +
   scale_fill_viridis_c(option = "C") +
   theme_void() +
   labs(
     fill = "Pro-life support",
-    title = "State-level Support for Pro-life"
+    title = "State-level Support for Pro-life",
+    caption = "Data is obtained from poliscidata R package"
   )
 ```
 
 
-Numeric variable (interactive plot):
+## Interactive plot: Public opinion on pro-life 
 
 ```{r}
 #| echo: false
@@ -122,22 +120,24 @@ leaflet(inter_ver) |>
 ```
 
 
-Categorical variable (static plot):
+## Static plot: Gay Support in the US
 
 ```{r}
 #| echo: false
 
 ggplot(static_ver, aes(long, lat, group = group, fill = gay_support3)) +
   geom_polygon(color = "white", linewidth = 0.2) +
+  coord_quickmap() +
   theme_void() +
   labs(
     fill = "Support level",
-    title = "State-level Support for Gay Rights"
+    title = "State-level Support for Gay Rights",
+    caption = "Data is obtained from poliscidata R package"
   )
 ```
 
 
-Categorical variable (interactive plot):
+## Interactive plot: Gay Support in the US
 
 ```{r}
 #| echo: false
@@ -167,5 +167,7 @@ leaflet(inter_ver) |>
     position = "bottomright"
   )
 ```
+
+<br>
 
 I definitely prefer the interactive plot. Even with making this conclusive closing, I felt that the interactive plot is very helpful with navigating the different states and also helped me to quickly identify which state is which. In places where gay supports are low (denoted by red), the prolife support is really high (denoted by yellow/brighter color). For example, states like Utah scores 61 in prolife support index and has low gay rights support.   

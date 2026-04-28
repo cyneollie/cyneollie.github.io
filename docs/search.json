@@ -81,7 +81,7 @@
     "href": "chloro.html",
     "title": "Choropleth Map Project",
     "section": "",
-    "text": "Numeric variable (static plot):\n\n\n\n\n\n\n\n\n\nNumeric variable (interactive plot):\n\n\n\n\n\n\nCategorical variable (static plot):\n\n\n\n\n\n\n\n\n\nCategorical variable (interactive plot):\n\n\n\n\n\n\nI definitely prefer the interactive plot. Even with making this conclusive closing, I felt that the interactive plot is very helpful with navigating the different states and also helped me to quickly identify which state is which. In places where gay supports are low (denoted by red), the prolife support is really high (denoted by yellow/brighter color). For example, states like Utah scores 61 in prolife support index and has low gay rights support."
+    "text": "Numeric variable (static plot):\n\n\n\n\n\n\n\n\n\nNumeric variable (interactive plot):\n\n\n\n\n\n\nCategorical variable (static plot):\n\n\n\n\n\n\n\n\n\nCategorical variable (interactive plot):\n\n\n\n\n\n\n\nI definitely prefer the interactive plot. Even with making this conclusive closing, I felt that the interactive plot is very helpful with navigating the different states and also helped me to quickly identify which state is which. In places where gay supports are low (denoted by red), the prolife support is really high (denoted by yellow/brighter color). For example, states like Utah scores 61 in prolife support index and has low gay rights support."
   },
   {
     "objectID": "blogging/04-03-25-SB/index.html",
@@ -166,5 +166,26 @@
     "title": "PubMed Text Analysis",
     "section": "Trigram based on top authors",
     "text": "Trigram based on top authors\n\n\n\n\n\n\n\nAnother interesting analysis we can do is finding tf-idf statistics. It is highly useful in the application of search engines, as this is the statistics behind ranking document in relevance to a query. Through this statistics, we can identify the most descriptive words in a document. In this case, I would try to find the important words for the content of Top 5 Journal Publishers for LD research. In this case, tf-idf will find the important words of each journal by decreasing the weight for commonly used words and increasing the weight for words that are not used very much in a collection of articles We want to find words that may or may not define one journal as opposed to others.\n\n\n\n\n\n\nWe have the Top 5 journals listed above, some of them are specialising in food science, some are in molecular science, and the rest are in general natural sciences, including physics, chemistry, earth sciences, medicine, and biology."
+  },
+  {
+    "objectID": "chloro.html#interactive-plot-public-opinion-on-pro-life",
+    "href": "chloro.html#interactive-plot-public-opinion-on-pro-life",
+    "title": "Choropleth Map Project",
+    "section": "Interactive plot: Public opinion on pro-life",
+    "text": "Interactive plot: Public opinion on pro-life"
+  },
+  {
+    "objectID": "chloro.html#static-plot-gay-support-in-the-us",
+    "href": "chloro.html#static-plot-gay-support-in-the-us",
+    "title": "Choropleth Map Project",
+    "section": "Static plot: Gay Support in the US",
+    "text": "Static plot: Gay Support in the US"
+  },
+  {
+    "objectID": "chloro.html#interactive-plot-gay-support-in-the-us",
+    "href": "chloro.html#interactive-plot-gay-support-in-the-us",
+    "title": "Choropleth Map Project",
+    "section": "Interactive plot: Gay Support in the US",
+    "text": "Interactive plot: Gay Support in the US\n\n\n\n\n\n\n\nI definitely prefer the interactive plot. Even with making this conclusive closing, I felt that the interactive plot is very helpful with navigating the different states and also helped me to quickly identify which state is which. In places where gay supports are low (denoted by red), the prolife support is really high (denoted by yellow/brighter color). For example, states like Utah scores 61 in prolife support index and has low gay rights support."
   }
 ]
